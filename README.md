@@ -28,3 +28,15 @@ Python, pandas, scikit-learn, pvlib, geopandas, folium
 
 ## Author
 Yohaan Mutha | High School Data Science Project | 2026
+
+## Data Sources
+- NASA POWER API — solar irradiance (GHI, DNI) and temperature
+- US Census ACS 2022 — median household income by county
+- USGS/Census TIGER — land area by county
+
+## Key Early Findings
+- El Paso and Brewster counties have highest solar potential (246 W/m² avg GHI)
+- Dimmit County has lowest median income ($27,374) — most energy vulnerable
+- Brewster County is both high solar AND low income — top microgrid candidate
+- Income range across Texas counties: $27K–$113K showing stark inequality
+- West Texas dominates solar potential; South Texas dominates energy vulnerability
