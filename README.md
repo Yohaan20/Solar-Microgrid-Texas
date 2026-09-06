@@ -1,7 +1,7 @@
 # ☀️ Texas Solar Microgrid Suitability Analysis
 
 ## Live Map
-🗺️ [Click here to explore the interactive map]((https://yohaan20.github.io/Solar-Microgrid-Texas/))
+🗺️ [Click here to explore the interactive map](https://github.com/Yohaan20/Solar-Microgrid-Texas/settings/pages))
 
 ## Project Question
 Which Texas counties have the highest potential for solar microgrids, 
