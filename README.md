@@ -1,42 +1,54 @@
-# Solar Energy Optimization & Microgrid Mapping — Texas
+# ☀️ Texas Solar Microgrid Suitability Analysis
+
+## Live Map
+🗺️ [Click here to explore the interactive map](https://yohaan20.github.io/Solar-Microgrid-Texas/)
 
 ## Project Question
-Which Texas counties have the highest potential for solar microgrids,
+Which Texas counties have the highest potential for solar microgrids, 
 and which underserved communities should be prioritized first?
 
 ## Motivation
-In February 2021, Winter Storm Uri caused the Texas power grid (ERCOT)
-to fail for millions of residents — some for over a week in freezing
-temperatures. Low-income communities were hit hardest and had the fewest
-resources to recover. This project uses data science to identify where
-solar microgrids could give those communities energy independence,
-so a grid failure never has the same impact again.
+In February 2021, Winter Storm Uri caused the Texas ERCOT grid to fail 
+for 4.5 million residents. Low-income communities were hit hardest. 
+This project uses data science to identify where solar microgrids could 
+give those communities energy independence.
 
-## What This Project Does
-- Pulls real solar irradiance data from NASA POWER API
-- Builds a machine learning model to predict solar energy yield by county
-- Scores all 254 Texas counties on microgrid suitability
-- Visualizes results on an interactive map
+## Key Findings
+- El Paso County scores highest (82.7/100) — high solar, moderate income
+- Brewster County scores #2 (80.2/100) — highest solar potential + low income
+- Dimmit County has lowest median income ($27,374) — most energy vulnerable
+- West Texas dominates solar potential; South Texas shows highest energy need
 
-## Tools Used
-Python, pandas, scikit-learn, pvlib, geopandas, folium
+## Methodology
+1. Pulled solar irradiance data (GHI, DNI) for 49 Texas counties via NASA POWER API
+2. Trained a Random Forest model to predict annual solar yield (R²=0.9978)
+3. Scored all counties on 4 weighted factors:
+   - Solar irradiance: 35%
+   - Median household income (inverted): 25%
+   - Grid vulnerability (distance from urban centers): 25%
+   - Available land area: 15%
+4. Built interactive choropleth map with folium
+
+## Results
+| County | Score | Annual Yield | Median Income |
+|---|---|---|---|
+| El Paso | 82.7/100 | 2,154 kWh/m²/yr | $55,417 |
+| Brewster | 80.2/100 | 2,114 kWh/m²/yr | $47,747 |
+| Pecos | 66.5/100 | 2,056 kWh/m²/yr | $59,325 |
+
+## Tech Stack
+Python · pandas · scikit-learn · pvlib · folium · NASA POWER API · US Census API
 
 ## Data Sources
-- NASA POWER API (solar data)
-- US Census Bureau (income data)
-- ERCOT (grid reliability data)
+- NASA POWER API — solar irradiance and temperature
+- US Census ACS 2022 — median household income
+- US Census TIGER — county land area
+
+## Setup
+```bash
+pip install pandas numpy matplotlib scikit-learn pvlib folium requests
+```
+Run notebooks in order: data_collection → model → map
 
 ## Author
 Yohaan Mutha | High School Data Science Project | 2026
-
-## Data Sources
-- NASA POWER API — solar irradiance (GHI, DNI) and temperature
-- US Census ACS 2022 — median household income by county
-- USGS/Census TIGER — land area by county
-
-## Key Early Findings
-- El Paso and Brewster counties have highest solar potential (246 W/m² avg GHI)
-- Dimmit County has lowest median income ($27,374) — most energy vulnerable
-- Brewster County is both high solar AND low income — top microgrid candidate
-- Income range across Texas counties: $27K–$113K showing stark inequality
-- West Texas dominates solar potential; South Texas dominates energy vulnerability
