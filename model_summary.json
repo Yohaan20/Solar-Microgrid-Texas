@@ -1,0 +1,20 @@
+{
+  "r2": 0.9978,
+  "rmse": 2.2884,
+  "best_params": {
+    "n_estimators": 50,
+    "max_depth": null
+  },
+  "annual_totals": {
+    "El Paso": 2153.8,
+    "Brewster": 2113.6,
+    "Midland": 2056.2,
+    "Travis": 1789.2,
+    "Harris": 1731.9,
+    "Cameron": 1782.1,
+    "Dimmit": 1841.8,
+    "Webb": 1866.9,
+    "Galveston": 1776.0,
+    "Taylor": 1900.3
+  }
+}
